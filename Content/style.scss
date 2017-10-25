@@ -29,6 +29,7 @@ body {
     text-align: center;
     background-color: $lightMain;
     padding: 80px 20px;
+    margin-bottom: 10px;
 
     input, .btn {
         align-self: center;
@@ -41,6 +42,7 @@ body {
         text-shadow: 0 0 1px $darkMain;
         font-size: 60px;
         margin: 0;
+        letter-spacing: 2px;
     }
     input {
         border: 4px solid $medMain;
@@ -96,21 +98,23 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-right: 10vw;
-    padding-left: 10vw;
-
+    padding-right: 5vw;
+    padding-left: 5vw;
+    .result:nth-child(2n) {
+        background-color: $lightMain;
+    }
     .result {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         width: 90%;
-        background-color: $lightMain;
-        border: 8px solid $medMain;
+        background-color: $medMain;
         /*box-shadow: 0 8px 0 $medmain;*/
-        margin: 10px;
         min-height: 200px;
-        padding: 20px 50px;
+        padding: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border-radius: $borderRadLarge;
 
         h1, p {
@@ -119,10 +123,11 @@ body {
         }
 
         h1 {
+            text-align: center;
             background-color: $lightMain;
             padding: 10px 40px;
             background-color: white;
-            margin: 0;
+            margin: 0 10px;
         }
 
         p {
@@ -134,5 +139,16 @@ body {
         a {
             margin: 0;
         }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .results .result {
+        h1 {
+           
+        }
+        p {
+        text-align: center;
+    }
     }
 }
