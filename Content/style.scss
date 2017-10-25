@@ -1,8 +1,8 @@
-﻿$blue: #229cf9;
-$darkBlue: #0276c9;
-$lightOrange: #fcd123;
-$medOrange: #ffae00;
-$darkOrange: #e88300;
+﻿$medSec: #229cf9;
+$darkSec: #0276c9;
+$lightMain: #fcd123;
+$medMain: #ffae00;
+$darkMain: #e88300;
 
 $borderRadLarge: 50px;
 $borderRadSmall: 30px;
@@ -26,8 +26,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-color: $lightOrange;
-    border: 10px solid $medOrange;
+    background-color: $lightMain;
+    border: 10px solid $medMain;
     border-radius: $borderRadLarge;
     padding: 20px;
     margin-bottom: 40px;
@@ -39,10 +39,13 @@ body {
     }
 
     input {
-        border: 4px solid $medOrange;
+        border: 4px solid $medMain;
         border-radius: $borderRadSmall;
         margin: 10px;
         font-size: 30px;
+        &:focus {
+            border-color: $darkMain;
+        }
     }
 
 }
@@ -57,9 +60,9 @@ body {
     border-radius: $borderRadSmall;
     border: none;
     font-weight: bold;
-    color: $blue;
+    color: $medSec;
     cursor: pointer;
-    box-shadow: 0 6px 0 $darkOrange;
+    box-shadow: 0 6px 0 $darkMain;
     position: relative;
     text-decoration: none;
     outline: none;
@@ -68,11 +71,11 @@ body {
 
     &:focus {
         top: 2px;
-        box-shadow: 0 4px 0 $darkOrange;
+        box-shadow: 0 4px 0 $darkMain;
     }
     &:hover {
         top: 3px;
-        box-shadow: 0 3px 0 $darkOrange;
+        box-shadow: 0 3px 0 $darkMain;
     }
 
     &:active {
@@ -93,24 +96,27 @@ body {
         justify-content: space-around;
         align-items: center;
         width: 90%;
-        background-color: $lightOrange;
-        border: 8px solid $medOrange;
+        background-color: $lightMain;
+        border: 8px solid $medMain;
+        /*box-shadow: 0 8px 0 $medmain;*/
         margin: 10px;
         min-height: 200px;
         padding: 20px 50px;
         border-radius: $borderRadLarge;
 
-        h1 {
-            padding: 10px 30px;
+        h1, p {
             border-radius: $borderRadSmall;
+            background-color: white;
+        }
+
+        h1 {
+            padding: 10px 40px;
             background-color: white;
             margin: 0;
         }
 
         p {
             padding: 30px 60px;
-            background-color: white;
-            border-radius: $borderRadSmall;
             margin: 30px 0;
             font-size: 20px;
         }

@@ -29,6 +29,8 @@ body {
     border-radius: 30px;
     margin: 10px;
     font-size: 30px; }
+    .search input:focus {
+      border-color: #e88300; }
 
 .btn {
   padding: 10px 30px;
@@ -71,19 +73,20 @@ body {
     width: 90%;
     background-color: #fcd123;
     border: 8px solid #ffae00;
+    /*box-shadow: 0 8px 0 $medmain;*/
     margin: 10px;
     min-height: 200px;
     padding: 20px 50px;
     border-radius: 50px; }
-    .results .result h1 {
-      padding: 10px 30px;
+    .results .result h1, .results .result p {
       border-radius: 30px;
+      background-color: white; }
+    .results .result h1 {
+      padding: 10px 40px;
       background-color: white;
       margin: 0; }
     .results .result p {
       padding: 30px 60px;
-      background-color: white;
-      border-radius: 30px;
       margin: 30px 0;
       font-size: 20px; }
     .results .result a {
