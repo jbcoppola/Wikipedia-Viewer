@@ -4,6 +4,9 @@ $lightOrange: #fcd123;
 $medOrange: #ffae00;
 $darkOrange: #e88300;
 
+$borderRadLarge: 50px;
+$borderRadSmall: 30px;
+
 button::-moz-focus-inner {
     border: 0;
 }
@@ -15,6 +18,7 @@ body {
     align-content: center;
     min-height: 90vh;
     padding: 50px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .search {
@@ -24,44 +28,95 @@ body {
     align-content: center;
     background-color: $lightOrange;
     border: 10px solid $medOrange;
-    border-radius: 50px;
+    border-radius: $borderRadLarge;
     padding: 20px;
+    margin-bottom: 40px;
 
-    input, button {
+    input, .btn {
         align-self: center;
-        border: none;
         padding: 10px 30px;
+        max-width: 80%;
     }
 
     input {
         border: 4px solid $medOrange;
-        border-radius: 50px;
+        border-radius: $borderRadSmall;
         margin: 10px;
         font-size: 30px;
     }
 
-    button {
-        background-color: white;
-        margin-bottom: 10px;
-        font-size: 24px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-radius: 20px;
-        border: none;
-        font-weight: bold;
-        color: $blue;
-        cursor: pointer;
-        box-shadow: 0 6px 0 $darkOrange;
-        position: relative;
+}
 
-        &:hover, &:focus {
-            top: 3px;
-            box-shadow: 0 3px 0 $darkOrange;
+.btn {
+    padding: 10px 30px;
+    background-color: white;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: $borderRadSmall;
+    border: none;
+    font-weight: bold;
+    color: $blue;
+    cursor: pointer;
+    box-shadow: 0 6px 0 $darkOrange;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+
+    &:focus {
+        top: 2px;
+        box-shadow: 0 4px 0 $darkOrange;
+    }
+    &:hover {
+        top: 3px;
+        box-shadow: 0 3px 0 $darkOrange;
+    }
+
+    &:active {
+        top: 6px;
+        box-shadow: none;
+    }
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .result {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        background-color: $lightOrange;
+        border: 8px solid $medOrange;
+        margin: 10px;
+        min-height: 200px;
+        padding: 20px 50px;
+        border-radius: $borderRadLarge;
+
+        h1 {
+            padding: 10px 30px;
+            border-radius: $borderRadSmall;
+            background-color: white;
+            margin: 0;
         }
 
-        &:active {
-            top: 6px;
-            box-shadow: none;
+        p {
+            padding: 30px 60px;
+            background-color: white;
+            border-radius: $borderRadSmall;
+            margin: 30px 0;
+            font-size: 20px;
+        }
+
+        a {
+            margin: 0;
         }
     }
 }

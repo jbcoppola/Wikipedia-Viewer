@@ -7,7 +7,8 @@ body {
   justify-content: flex-start;
   align-content: center;
   min-height: 90vh;
-  padding: 50px; }
+  padding: 50px;
+  font-family: 'Open Sans', sans-serif; }
 
 .search {
   display: flex;
@@ -17,32 +18,73 @@ body {
   background-color: #fcd123;
   border: 10px solid #ffae00;
   border-radius: 50px;
-  padding: 20px; }
-  .search input, .search button {
+  padding: 20px;
+  margin-bottom: 40px; }
+  .search input, .search .btn {
     align-self: center;
-    border: none;
-    padding: 10px 30px; }
+    padding: 10px 30px;
+    max-width: 80%; }
   .search input {
     border: 4px solid #ffae00;
-    border-radius: 50px;
+    border-radius: 30px;
     margin: 10px;
     font-size: 30px; }
-  .search button {
-    background-color: white;
-    margin-bottom: 10px;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    color: #229cf9;
-    cursor: pointer;
-    box-shadow: 0 6px 0 #e88300;
-    position: relative; }
-    .search button:hover, .search button:focus {
-      top: 3px;
-      box-shadow: 0 3px 0 #e88300; }
-    .search button:active {
-      top: 6px;
-      box-shadow: none; }
+
+.btn {
+  padding: 10px 30px;
+  background-color: white;
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  color: #229cf9;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #e88300;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  font-weight: bold; }
+  .btn:focus {
+    top: 2px;
+    box-shadow: 0 4px 0 #e88300; }
+  .btn:hover {
+    top: 3px;
+    box-shadow: 0 3px 0 #e88300; }
+  .btn:active {
+    top: 6px;
+    box-shadow: none; }
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+  .results .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    background-color: #fcd123;
+    border: 8px solid #ffae00;
+    margin: 10px;
+    min-height: 200px;
+    padding: 20px 50px;
+    border-radius: 50px; }
+    .results .result h1 {
+      padding: 10px 30px;
+      border-radius: 30px;
+      background-color: white;
+      margin: 0; }
+    .results .result p {
+      padding: 30px 60px;
+      background-color: white;
+      border-radius: 30px;
+      margin: 30px 0;
+      font-size: 20px; }
+    .results .result a {
+      margin: 0; }
