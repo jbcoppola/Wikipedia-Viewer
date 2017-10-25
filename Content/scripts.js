@@ -37,7 +37,7 @@ function htmlBuilder(data) {
                 result += "<p>" + data[j][i] + "</p>";
             }
             else {
-                result += "<a class='btn' href='" + data[j][i] + "'>" + "Full Article" + "</a>";
+                result += "<a class='btn' target='_blank' href='" + data[j][i] + "'>" + "Full Article" + "</a>";
             }
         }
         result += "</div>";
