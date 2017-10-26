@@ -1,8 +1,8 @@
 ﻿$medSec: #229cf9;
 $darkSec: #0276c9;
-$lightMain: #fcd123;
-$medMain: #ffae00;
-$darkMain: #e88300;
+$lightMain: #ff666b;
+$medMain: #ed3462;
+$darkMain: #d6264f;
 
 $borderRadLarge: 50px;
 $borderRadSmall: 30px;
@@ -10,7 +10,6 @@ $borderRadSmall: 30px;
 button::-moz-focus-inner {
     border: 0;
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -34,15 +33,18 @@ body {
     input, .btn {
         align-self: center;
         padding: 10px 30px;
+        margin-left: 5px;
+        margin-right: 5px;
         max-width: 80%;
     }
     h1 {
+        align-self: center;
         text-transform: uppercase;
-        color: $medSec;
-        text-shadow: 0 0 1px $darkMain;
+        color: white;
         font-size: 60px;
+        font-weight: normal;
         margin: 0;
-        letter-spacing: 2px;
+        letter-spacing: 5px;
     }
     input {
         border: 4px solid $medMain;
@@ -60,23 +62,26 @@ body {
 }
 
 .btn {
-    padding: 10px 30px;
     background-color: white;
     margin-bottom: 10px;
-    font-size: 24px;
-    text-transform: uppercase;
+    font: {
+        family: 'Open Sans', sans-serif;
+        size: 24px;
+        weight: bold;
+    }
+    text: {
+        transform: uppercase;
+        decoration: none;
+        align: center;
+    }
     letter-spacing: 2px;
     border-radius: $borderRadSmall;
     border: none;
-    font-weight: bold;
     color: $medSec;
     cursor: pointer;
     box-shadow: 0 6px 0 $darkMain;
     position: relative;
-    text-decoration: none;
     outline: none;
-    text-align: center;
-    font-weight: bold;
 
     &:focus {
         top: 2px;
@@ -100,43 +105,49 @@ body {
     align-items: center;
     padding-right: 5vw;
     padding-left: 5vw;
-    .result:nth-child(2n) {
-        background-color: $lightMain;
-    }
-    .result {
+    a {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        width: 90%;
-        background-color: $medMain;
-        /*box-shadow: 0 8px 0 $medmain;*/
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        outline: none;
+        background-color: $lightMain;
         min-height: 200px;
-        padding: 50px;
+        padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
         border-radius: $borderRadLarge;
-
+        
+    &:hover, &:focus {
+        background-color: $medMain;
+    }
         h1, p {
             border-radius: $borderRadSmall;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: stretch;
+            margin: 10px;
             background-color: white;
         }
 
         h1 {
             text-align: center;
-            background-color: $lightMain;
+            flex: 0 1 30%;
             padding: 10px 40px;
-            background-color: white;
-            margin: 0 10px;
         }
 
         p {
+            flex: 0 1 70%;
             padding: 30px 60px;
-            margin: 30px 0;
             font-size: 20px;
         }
 
         a {
+            flex: 0 1 20%;
             margin: 0;
         }
     }
@@ -144,9 +155,7 @@ body {
 
 @media screen and (max-width: 720px) {
     .results .result {
-        h1 {
-           
-        }
+        flex-direction: column;
         p {
         text-align: center;
     }

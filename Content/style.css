@@ -16,54 +16,56 @@ body {
   justify-content: center;
   align-content: center;
   text-align: center;
-  background-color: #fcd123;
+  background-color: #ff666b;
   padding: 80px 20px;
   margin-bottom: 10px; }
   .search input, .search .btn {
     align-self: center;
     padding: 10px 30px;
+    margin-left: 5px;
+    margin-right: 5px;
     max-width: 80%; }
   .search h1 {
+    align-self: center;
     text-transform: uppercase;
-    color: #229cf9;
-    text-shadow: 0 0 1px #e88300;
+    color: white;
     font-size: 60px;
+    font-weight: normal;
     margin: 0;
-    letter-spacing: 2px; }
+    letter-spacing: 5px; }
   .search input {
-    border: 4px solid #ffae00;
+    border: 4px solid #ed3462;
     border-radius: 30px;
     margin: 10px;
     font-size: 30px; }
     .search input:focus {
-      border-color: #e88300; }
+      border-color: #d6264f; }
     .search input::placeholder {
       color: rgba(0, 0, 0, 0.3); }
 
 .btn {
-  padding: 10px 30px;
   background-color: white;
   margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
+  font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
   letter-spacing: 2px;
   border-radius: 30px;
   border: none;
-  font-weight: bold;
   color: #229cf9;
   cursor: pointer;
-  box-shadow: 0 6px 0 #e88300;
+  box-shadow: 0 6px 0 #d6264f;
   position: relative;
-  text-decoration: none;
-  outline: none;
-  text-align: center;
-  font-weight: bold; }
+  outline: none; }
   .btn:focus {
     top: 2px;
-    box-shadow: 0 4px 0 #e88300; }
+    box-shadow: 0 4px 0 #d6264f; }
   .btn:hover {
     top: 3px;
-    box-shadow: 0 3px 0 #e88300; }
+    box-shadow: 0 3px 0 #d6264f; }
   .btn:active {
     top: 6px;
     box-shadow: none; }
@@ -75,37 +77,45 @@ body {
   align-items: center;
   padding-right: 5vw;
   padding-left: 5vw; }
-  .results .result:nth-child(2n) {
-    background-color: #fcd123; }
-  .results .result {
+  .results a {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    width: 90%;
-    background-color: #ffae00;
-    /*box-shadow: 0 8px 0 $medmain;*/
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    outline: none;
+    background-color: #ff666b;
     min-height: 200px;
-    padding: 50px;
+    padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 50px; }
-    .results .result h1, .results .result p {
+    .results a:hover, .results a:focus {
+      background-color: #ed3462; }
+    .results a h1, .results a p {
       border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+      margin: 10px;
       background-color: white; }
-    .results .result h1 {
+    .results a h1 {
       text-align: center;
-      background-color: #fcd123;
-      padding: 10px 40px;
-      background-color: white;
-      margin: 0 10px; }
-    .results .result p {
+      flex: 0 1 30%;
+      padding: 10px 40px; }
+    .results a p {
+      flex: 0 1 70%;
       padding: 30px 60px;
-      margin: 30px 0;
       font-size: 20px; }
-    .results .result a {
+    .results a a {
+      flex: 0 1 20%;
       margin: 0; }
 
 @media screen and (max-width: 720px) {
-  .results .result p {
-    text-align: center; } }
+  .results .result {
+    flex-direction: column; }
+    .results .result p {
+      text-align: center; } }

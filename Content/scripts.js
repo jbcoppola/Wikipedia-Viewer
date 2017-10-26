@@ -28,19 +28,16 @@ function buttonGet(url) {
 function htmlBuilder(data) {
     var htmlString = "";
     for (i = 0; i < data[1].length; i++) {
-        var result = '<div class="result">';
-        for (j = 1; j < data.length; j++) {
+        var result = '<a href="'+ data[3][i] + '" target="_blank" class="result">';
+        for (j = 1; j < data.length - 1; j++) {
             if (j === 1) {
                 result += "<h1>" + data[j][i] + "</h1>";
             }
             else if (j === 2) {
                 result += "<p>" + data[j][i] + "</p>";
             }
-            else {
-                result += "<a class='btn' target='_blank' href='" + data[j][i] + "'>" + "Full Article" + "</a>";
-            }
         }
-        result += "</div>";
+        result += "</a>";
         htmlString += result;
     }
     return htmlString;
