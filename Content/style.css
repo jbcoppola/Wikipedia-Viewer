@@ -21,11 +21,14 @@ body, body * {
   background-color: #ff666b;
   padding: 80px 20px;
   margin-bottom: 10px; }
+  .search div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; }
   .search input, .search .btn {
     align-self: center;
     padding: 10px 30px;
-    margin-left: 5px;
-    margin-right: 5px;
     max-width: 80%; }
   .search h1 {
     align-self: center;
@@ -48,7 +51,7 @@ body, body * {
 
 .btn {
   background-color: white;
-  margin-bottom: 10px;
+  margin: 5px;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
@@ -114,6 +117,8 @@ body, body * {
       font-size: 20px; }
 
 @media screen and (max-width: 720px) {
+  .search h1 {
+    font-size: 50px; }
   .results .result {
     flex-direction: column; }
     .results .result h1 {

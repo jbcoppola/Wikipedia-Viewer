@@ -30,12 +30,15 @@ body, body * {
     background-color: $lightMain;
     padding: 80px 20px;
     margin-bottom: 10px;
-
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
     input, .btn {
         align-self: center;
         padding: 10px 30px;
-        margin-left: 5px;
-        margin-right: 5px;
         max-width: 80%;
     }
     h1 {
@@ -65,7 +68,7 @@ body, body * {
 
 .btn {
     background-color: white;
-    margin-bottom: 10px;
+    margin: 5px;
     font: {
         size: 24px;
         weight: bold;
@@ -150,6 +153,11 @@ body, body * {
 }
 
 @media screen and (max-width: 720px) {
+    .search {
+        h1 {
+            font-size: 50px;
+        }
+    }
     .results .result {
         flex-direction: column;
         h1 {
