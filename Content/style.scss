@@ -44,14 +44,14 @@ h1 {
     text-align: center;
     background-color: $lightMain;
     padding: 80px 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     div {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
     }
-    .search-bar, .btn {
+    .search-bar {
         align-self: center;
         padding: 10px 30px;
         max-width: 80%;
@@ -99,7 +99,8 @@ h1 {
     position: relative;
     outline: none;
     transition: color 100ms;
-
+    padding: 10px 30px;
+    align-self: center;
     &:focus, &:hover {
         color: $darkSec;
     }
@@ -154,14 +155,14 @@ h1 {
             font-size: 40px;
             margin: 0;
             font-weight: bold;
-            flex: 1 1 50%;
+            flex: 1 1 40%;
             padding: 30px;
             max-height: 20vh;
             text-overflow: ellipsis;
         }
 
         p {
-            flex: 1 1 50%;
+            flex: 1 1 60%;
             padding: 10px 30px;
             text-align: center;
             font-size: 20px;
@@ -173,16 +174,23 @@ h1 {
         }
         img {
             align-self: center;
-            flex: 0 2 0%;
             max-height: 25vh;
             max-width: 95%;
             border-radius: $borderRadSmall;
             margin: 10px;
-            box-shadow: 0 0 2px $medMain;
         }
     }
 }
-
+.footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: $lightMain;
+    height: 100px;
+}
+* .hidden {
+    display: none;
+}
 * .expand {
     max-height: 4000px;
 }
