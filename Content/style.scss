@@ -90,13 +90,8 @@ body, body * {
     position: relative;
     outline: none;
 
-    &:focus {
-        top: 2px;
-        box-shadow: 0 4px 0 $darkMain;
-    }
-    &:hover {
-        top: 3px;
-        box-shadow: 0 3px 0 $darkMain;
+    &:focus, &:hover {
+        color: $darkSec;
     }
 
     &:active {
@@ -115,7 +110,7 @@ body, body * {
     padding-left: 5vw;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s linear;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     .result {
         display: flex;
         flex-direction: row;

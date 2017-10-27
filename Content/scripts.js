@@ -10,7 +10,6 @@
 
 function searchFunc(url) {
     if (document.querySelector(".results-list").classList.contains("expand")) {
-        console.log("not 0");
         retract();
         setTimeout(function () {
             buttonGet(url);
@@ -64,7 +63,4 @@ function expand() {
 }
 function retract() {
     document.querySelector(".results-list").classList.remove("expand");
-}
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }

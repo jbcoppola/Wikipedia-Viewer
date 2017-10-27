@@ -68,12 +68,8 @@ body, body * {
   box-shadow: 0 6px 0 #d6264f;
   position: relative;
   outline: none; }
-  .btn:focus {
-    top: 2px;
-    box-shadow: 0 4px 0 #d6264f; }
-  .btn:hover {
-    top: 3px;
-    box-shadow: 0 3px 0 #d6264f; }
+  .btn:focus, .btn:hover {
+    color: #0276c9; }
   .btn:active {
     top: 6px;
     box-shadow: none; }
@@ -87,7 +83,7 @@ body, body * {
   padding-left: 5vw;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s linear; }
+  transition: max-height 1s cubic-bezier(0.645, 0.045, 0.355, 1); }
   .results-list .result {
     display: flex;
     flex-direction: row;
