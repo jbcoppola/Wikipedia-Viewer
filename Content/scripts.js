@@ -43,13 +43,21 @@ function buttonGet(url) {
 
 function htmlBuilder(pages) {
     var htmlString = "";
+    console.log(pages);
     for (page in pages) {
-        var result = '<a href="http://en.wikipedia.org/?curid=' + pages[page].pageid + '" target="_blank" class="result">';
-        result += "<h1>" + pages[page].title + "</h1>";
-        if (pages[page].terms.description) { result += "<p>" + pages[page].terms.description + "</p>" };
-        if (pages[page].original) { result += '<div class="image"><img src="' + pages[page].original.source + '" /></div>'; }
-        result += "</a>";
-        htmlString += result;
+        if (pages[page].terms.description) {
+            var desc = pages[page].terms.description[0];
+            var display = "string: '" + desc + "'. Found disambiguation: " + !(desc.indexOf("disambiguation") === -1);
+            console.log(display);
+            if (desc.indexOf("disambiguation") === -1) {
+                var result = '<a href="http://en.wikipedia.org/?curid=' + pages[page].pageid + '" target="_blank" class="result">';
+                result += "<h1>" + pages[page].title + "</h1>";
+                result += "<p>" + pages[page].terms.description + "</p>";
+                if (pages[page].original) { result += '<div class="image"><img src="' + pages[page].original.source + '" /></div>'; }
+                result += "</a>";
+                htmlString += result;
+            }
+        }
     };
     return htmlString;
 }

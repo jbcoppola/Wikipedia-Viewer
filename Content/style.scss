@@ -157,7 +157,7 @@ body, body * {
         }
 
         p {
-            flex: 0 1 50%;
+            flex: 1 1 50%;
             padding: 30px 60px;
             font-size: 20px;
         }
@@ -165,7 +165,6 @@ body, body * {
             max-height: 180px;
         }
         .image {
-            flex: 0 1 20%;
             border-radius: $borderRadSmall;
             overflow: hidden;
         }
