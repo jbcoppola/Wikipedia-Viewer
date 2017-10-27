@@ -2,9 +2,26 @@
     document.querySelector(".search button").addEventListener("click", function () {
         var search = document.querySelector(".search input").value;
         var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + search + '&origin=*';
-        buttonGet(url);
+        var resultsList = document.querySelector(".results-list");
+        searchFunc(url);
     });
 };
+
+
+function searchFunc(url) {
+    if (document.querySelector(".results-list").classList.contains("expand")) {
+        console.log("not 0");
+        retract();
+        setTimeout(function () {
+            buttonGet(url);
+            expand();
+        }, 1000);
+    }
+    else {
+        buttonGet(url);
+        expand();
+    }
+}
 
 function buttonGet(url) {
     fetch(url, {
@@ -18,7 +35,7 @@ function buttonGet(url) {
             return htmlBuilder(data);
         })
         .then(function (data) {
-            document.querySelector(".results").innerHTML = data;
+            document.querySelector(".results-list").innerHTML = data;
         })
         .catch(function (error) {
             console.log(error);
@@ -41,4 +58,13 @@ function htmlBuilder(data) {
         htmlString += result;
     }
     return htmlString;
+}
+function expand() {
+    document.querySelector(".results-list").classList.add("expand");
+}
+function retract() {
+    document.querySelector(".results-list").classList.remove("expand");
+}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }

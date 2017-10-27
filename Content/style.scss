@@ -10,6 +10,9 @@ $borderRadSmall: 30px;
 button::-moz-focus-inner {
     border: 0;
 }
+input:focus {
+    outline: none;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -102,13 +105,17 @@ body, body * {
     }
 }
 
-.results {
+
+.results-list {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding-right: 5vw;
     padding-left: 5vw;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s linear;
     .result {
         display: flex;
         flex-direction: row;
@@ -124,9 +131,11 @@ body, body * {
         margin-top: 10px;
         margin-bottom: 10px;
         border-radius: $borderRadLarge;
+        box-shadow: 0 4px 0 $medMain;
         
     &:hover, &:focus {
         background-color: $medMain;
+        box-shadow: 0 4px 0 $darkMain;
     }
         h1, p {
             border-radius: $borderRadSmall;
@@ -152,13 +161,16 @@ body, body * {
     }
 }
 
+* .expand {
+    max-height: 3000px;
+}
 @media screen and (max-width: 720px) {
     .search {
         h1 {
             font-size: 50px;
         }
     }
-    .results .result {
+    .results-list .result {
         flex-direction: column;
         h1 {
             align-self: center;
