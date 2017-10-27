@@ -1,6 +1,8 @@
 ﻿window.onload = function () {
-    document.querySelector(".search button").addEventListener("click", function () {
-        var search = document.querySelector(".search input").value;
+    var button = document.querySelector(".search input.btn");
+    document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var search = document.querySelector(".search-bar").value;
         var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages%7Cpageterms&list=&generator=search&piprop=original&gsrnamespace=0&gsrlimit=18&gsrprop=snippet%7Ctitlesnippet&gsrsearch=' + search;
         var resultsList = document.querySelector(".results-list");
         searchFunc(url);
@@ -43,16 +45,14 @@ function buttonGet(url) {
 
 function htmlBuilder(pages) {
     var htmlString = "";
-    console.log(pages);
     for (page in pages) {
         if (pages[page].terms.description) {
             var desc = pages[page].terms.description[0];
             var display = "string: '" + desc + "'. Found disambiguation: " + !(desc.indexOf("disambiguation") === -1);
-            console.log(display);
             if (desc.indexOf("disambiguation") === -1) {
                 var result = '<a href="http://en.wikipedia.org/?curid=' + pages[page].pageid + '" target="_blank" class="result">';
                 result += "<h1>" + pages[page].title + "</h1>";
-                if (pages[page].original) { result += '<img src="' + pages[page].original.source + '" />'; }
+                if (pages[page].original && pages[page].title.length < 30) { result += '<img src="' + pages[page].original.source + '" />'; }
                 result += "<p>" + pages[page].terms.description + "</p>";
                 result += "</a>";
                 htmlString += result;

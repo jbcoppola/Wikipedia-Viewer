@@ -9,14 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="search">
+    <div class="search" id="search">
         <h1>Wikipedia Search</h1>
-        <input type="text" id="text" placeholder="search for articles" />
-        <div>
-            <a href=" https://en.wikipedia.org/wiki/Special:Random" target="_blank" class="btn">Random</a>
-            <button class="btn">Search</button>
-        </div>
+        <form>
+            <input type="text" class="search-bar" placeholder="search for articles" />
+            <div>
+                <a href=" https://en.wikipedia.org/wiki/Special:Random" target="_blank" class="btn">Random</a>
+                <input type="submit" class="btn" />
+            </div>
+        </form>
     </div>
     <div class="results-list"></div>
+    <a href="#search"></a>
 </body>
 </html>
