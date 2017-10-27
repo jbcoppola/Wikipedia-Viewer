@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-content: stretch;
-    min-height: 90vh;
     margin: 0;
 }
 body, body * {
@@ -55,12 +54,19 @@ body, body * {
         text-shadow: 0 0 2px $darkMain;
     }
     input {
-        border: 4px solid $medMain;
+        position: relative;
+        border: 4px solid $lightMain;
         border-radius: $borderRadSmall;
         margin: 10px;
         font-size: 30px;
+        box-shadow: inset 0 4px 0 $medMain;
+        text-shadow: 0 2px 2px rgba(0,0,0,0.05);
         &:focus {
+            top: 4px;
             border-color: $darkMain;
+            border-top: none;
+            box-shadow: inset 0 4px 0 $darkMain;
+            margin-bottom: 14px;
         }
         &::placeholder {
             color: rgba(0,0,0,0.3);
@@ -89,6 +95,7 @@ body, body * {
     box-shadow: 0 6px 0 $darkMain;
     position: relative;
     outline: none;
+    transition: 100ms;
 
     &:focus, &:hover {
         color: $darkSec;
@@ -110,7 +117,7 @@ body, body * {
     padding-left: 5vw;
     max-height: 0;
     overflow: hidden;
-    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: max-height 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     .result {
         display: flex;
         flex-direction: row;
@@ -127,7 +134,8 @@ body, body * {
         margin-bottom: 10px;
         border-radius: $borderRadLarge;
         box-shadow: 0 4px 0 $medMain;
-        
+        transition: 100ms;
+
     &:hover, &:focus {
         background-color: $medMain;
         box-shadow: 0 4px 0 $darkMain;
