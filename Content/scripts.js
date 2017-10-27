@@ -7,6 +7,7 @@
         var resultsList = document.querySelector(".results-list");
         searchFunc(url);
     });
+    scrollTo(document.querySelector(".footer a"), "search");
 };
 
 
@@ -80,4 +81,12 @@ function expand() {
 }
 function retract() {
     document.querySelector(".results-list").classList.remove("expand");
+}
+
+function scrollTo(btn, scrollToId) {
+    btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        var destination = document.getElementById(scrollToId).offsetTop;
+        window.scroll({ top: destination, behavior: "smooth" });
+    })
 }
