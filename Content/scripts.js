@@ -52,8 +52,8 @@ function htmlBuilder(pages) {
             if (desc.indexOf("disambiguation") === -1) {
                 var result = '<a href="http://en.wikipedia.org/?curid=' + pages[page].pageid + '" target="_blank" class="result">';
                 result += "<h1>" + pages[page].title + "</h1>";
-                result += "<p>" + pages[page].terms.description + "</p>";
                 if (pages[page].original) { result += '<img src="' + pages[page].original.source + '" />'; }
+                result += "<p>" + pages[page].terms.description + "</p>";
                 result += "</a>";
                 htmlString += result;
             }
