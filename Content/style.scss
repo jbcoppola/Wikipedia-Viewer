@@ -110,28 +110,26 @@ body, body * {
 
 .results-list {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding-right: 5vw;
-    padding-left: 5vw;
+    flex-wrap: wrap;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s cubic-bezier(0.645, 0.045, 0.355, 1);
     .result {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        width: 100%;
+        align-self: stretch;
+        width: 28vw;
         text-decoration: none;
         color: black;
         outline: none;
         background-color: $lightMain;
         min-height: 200px;
         padding: 15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px;
         border-radius: $borderRadLarge;
         box-shadow: 0 4px 0 $medMain;
         transition: 100ms;
@@ -140,7 +138,7 @@ body, body * {
         background-color: $medMain;
         box-shadow: 0 4px 0 $darkMain;
     }
-        h1, p, .image {
+        h1, p {
             border-radius: $borderRadSmall;
             display: flex;
             justify-content: center;
@@ -153,40 +151,39 @@ body, body * {
         h1 {
             text-align: center;
             flex: 1 1 30%;
-            padding: 10px 40px;
+            padding: 30px 60px;
         }
 
         p {
-            flex: 1 1 50%;
+            flex: 0 1 70%;
             padding: 30px 60px;
             font-size: 20px;
         }
         img {
-            max-height: 180px;
-        }
-        .image {
+            align-self: center;
+            max-height: 40vh;
+            max-width: 95%;
             border-radius: $borderRadSmall;
-            overflow: hidden;
+            margin: 10px;
         }
     }
 }
 
 * .expand {
-    max-height: 3000px;
+    max-height: 4000px;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1080px) {
     .search {
         h1 {
             font-size: 50px;
         }
     }
     .results-list .result {
-        flex-direction: column;
-        h1 {
-            align-self: center;
-        }
-        p {
-        text-align: center;
+        width: 40vw;
     }
+}
+@media screen and (max-width: 720px) {
+    .results-list .result {
+        width: 80vw;
     }
 }

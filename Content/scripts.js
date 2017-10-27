@@ -1,7 +1,7 @@
 ﻿window.onload = function () {
     document.querySelector(".search button").addEventListener("click", function () {
         var search = document.querySelector(".search input").value;
-        var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages%7Cpageterms&list=&generator=search&piprop=original&gsrnamespace=0&gsrlimit=20&gsrprop=snippet%7Ctitlesnippet&gsrsearch=' + search;
+        var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages%7Cpageterms&list=&generator=search&piprop=original&gsrnamespace=0&gsrlimit=18&gsrprop=snippet%7Ctitlesnippet&gsrsearch=' + search;
         var resultsList = document.querySelector(".results-list");
         searchFunc(url);
     });
@@ -53,7 +53,7 @@ function htmlBuilder(pages) {
                 var result = '<a href="http://en.wikipedia.org/?curid=' + pages[page].pageid + '" target="_blank" class="result">';
                 result += "<h1>" + pages[page].title + "</h1>";
                 result += "<p>" + pages[page].terms.description + "</p>";
-                if (pages[page].original) { result += '<div class="image"><img src="' + pages[page].original.source + '" /></div>'; }
+                if (pages[page].original) { result += '<img src="' + pages[page].original.source + '" />'; }
                 result += "</a>";
                 htmlString += result;
             }
