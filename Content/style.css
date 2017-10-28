@@ -122,12 +122,11 @@ h1 {
       font-size: 40px;
       margin: 0;
       font-weight: bold;
-      flex: 1 1 40%;
       padding: 30px;
       max-height: 20vh;
       text-overflow: ellipsis; }
     .results-list .result p {
-      flex: 1 1 60%;
+      height: 200px;
       padding: 10px 30px;
       text-align: center;
       font-size: 20px;
@@ -138,7 +137,7 @@ h1 {
       border-radius: 30px; }
     .results-list .result img {
       align-self: center;
-      max-height: 400px;
+      max-height: 300px;
       max-width: 95%;
       border-radius: 30px;
       margin: 10px; }

@@ -56,16 +56,22 @@ function htmlBuilder(pages) {
     for (page in pages) {
         if (pages[page].terms.description) {
             var desc = pages[page].terms.description[0];
+            var title = pages[page].title;
+
             if (desc.indexOf("disambiguation") === -1) {
                 var result = '<a href="http://en.wikipedia.org/?curid=' + pages[page].pageid + '" target="_blank" class="result">';
-                result += "<h1>" + pages[page].title + "</h1>";
+
+                //truncate title if too long
+                var maxTitleLen = 25;
+                if (title.length >= maxTitleLen) { title = title.slice(0, maxTitleLen) + "..."; }
+                result += "<h1>" + title + "</h1>";
 
                 //truncate description if too long
-                var maxLen = 100;
-                if (desc.length >= maxLen) { desc = desc.slice(0, maxLen) + "..."; }
+                var maxDescLen = 100;
+                if (desc.length >= maxDescLen) { desc = desc.slice(0, maxDescLen) + "..."; }
 
                 //only include image if title and description aren't long
-                if (pages[page].original && pages[page].title.length < 30 && desc.length < maxLen) {
+                if (pages[page].original && title.length < maxTitleLen && desc.length < maxDescLen) {
                     result += '<img src="' + pages[page].original.source + '" />';
                 }
                 result += "<p>" + desc + "</p>";
