@@ -107,7 +107,8 @@ h1 {
     margin: 10px;
     border-radius: 50px;
     box-shadow: 0 4px 0 #ed3462;
-    animation: fadein 100ms ease-in-out 1; }
+    animation: fadein 100ms ease-in-out 1;
+    transition: 100ms; }
     .results-list .result:nth-of-type(1n) {
       order: 1; }
     .results-list .result:nth-of-type(2n) {

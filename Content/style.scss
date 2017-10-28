@@ -136,6 +136,7 @@ h1 {
         border-radius: $borderRadLarge;
         box-shadow: 0 4px 0 $medMain;
         animation: fadein 100ms ease-in-out 1;
+        transition: 100ms;
 
     &:nth-of-type(1n) {
         order: 1;
