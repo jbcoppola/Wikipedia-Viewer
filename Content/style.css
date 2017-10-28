@@ -116,7 +116,6 @@ h1 {
       display: flex;
       justify-content: center;
       align-items: center;
-      align-self: stretch;
       margin: 10px; }
     .results-list .result h1 {
       text-align: center;
@@ -136,10 +135,10 @@ h1 {
       color: #0276c9;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border-radius: 50px; }
+      border-radius: 30px; }
     .results-list .result img {
       align-self: center;
-      max-height: 25vh;
+      max-height: 400px;
       max-width: 95%;
       border-radius: 30px;
       margin: 10px; }
@@ -161,7 +160,9 @@ h1 {
   .search h1 {
     font-size: 50px; }
   .results-list .result {
-    width: 40vw; } }
+    width: 40vw; }
+  * .expand {
+    max-height: 8000px; } }
 
 @media screen and (max-width: 720px) {
   .results-list .result {
