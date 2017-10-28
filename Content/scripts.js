@@ -8,25 +8,32 @@
         searchFunc(url);
     });
     scrollTo(document.querySelector(".footer a"), "search");
+    window.onresize = function() {
+        resultsHeight();
+    }
 };
 
 
 function searchFunc(url) {
     if (document.querySelector(".results-list").classList.contains("expand")) {
         document.querySelector(".footer").classList.add("hidden");
-        retract();
+        //retract();
         setTimeout(function () {
             buttonGet(url);
-            expand();
+            //expand();
         }, 1000);
         setTimeout(function () {
+
+            resultsHeight();
             document.querySelector(".footer").classList.remove("hidden");
         }, 2000);
     }
     else {
         buttonGet(url);
-        expand();
+        //expand();
         setTimeout(function () {
+
+            resultsHeight();
             document.querySelector(".footer").classList.remove("hidden");
         }, 800);
     }
@@ -95,4 +102,25 @@ function scrollTo(btn, scrollToId) {
         var destination = document.getElementById(scrollToId).offsetTop;
         window.scroll({ top: destination, behavior: "smooth" });
     })
+}
+
+function resultsHeight() {
+    var results = document.querySelectorAll(".result");
+    console.log(results);
+    var height = 0;
+    for (i = 0; i < results.length; i++) {
+        height += results[i].clientHeight;
+    }
+    var divider;
+    if (window.innerWidth > 1080) {
+        divider = 2.5;
+    }
+    else if (window.innerWidth > 720) {
+        divider = 1.5;
+    }
+    else { divider = .5; }
+    height /= divider;
+
+    height = height.toString() + "px";
+    document.querySelector(".results-list").style.maxHeight = height;
 }
