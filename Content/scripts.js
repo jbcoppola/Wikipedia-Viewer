@@ -77,12 +77,12 @@ function htmlBuilder(pages) {
                 var maxDescLen = 100;
                 if (desc.length >= maxDescLen) { desc = desc.slice(0, maxDescLen) + "..."; }
 
+                result += "<div>"
                 //only include image if title and description aren't long
                 if (pages[page].original && title.length < maxTitleLen && desc.length < maxDescLen) {
                     result += '<img src="' + pages[page].original.source + '" />';
                 }
-                result += "<p>" + desc + "</p>";
-                result += "</a>";
+                result += "<p>" + desc + "</p></div></a>";
                 htmlString += result;
             }
         }

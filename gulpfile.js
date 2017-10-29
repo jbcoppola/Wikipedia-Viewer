@@ -7,10 +7,12 @@ Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 // Sass configuration
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass-compile', function () {
     gulp.src('./Content/style.scss')
         .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(gulp.dest('./Content/'));
 });
 
