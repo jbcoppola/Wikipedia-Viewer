@@ -155,8 +155,8 @@ h1 {
     margin: 10px;
     border-radius: 50px;
     box-shadow: 0 4px 0 #ed3462;
-    -webkit-animation: fadein 100ms ease-in-out 1;
-            animation: fadein 100ms ease-in-out 1;
+    -webkit-animation: fadeIn 200ms ease-in-out;
+            animation: fadeIn 200ms ease-in-out;
     transition: 100ms; }
     .results-list .result:nth-of-type(1n) {
       -webkit-box-ordinal-group: 2;
@@ -213,7 +213,11 @@ h1 {
       max-height: 300px;
       max-width: 95%;
       border-radius: 30px;
-      margin: 10px; }
+      margin: 10px;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-animation: growIn 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
+              animation: growIn 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards; }
 
 .footer {
   margin-top: 20px;
@@ -232,17 +236,33 @@ h1 {
 * .expand {
   max-height: 240vw; }
 
-@-webkit-keyframes fadein {
+@-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
 
-@keyframes fadein {
+@keyframes fadeIn {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+@-webkit-keyframes growIn {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes growIn {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
 @media screen and (max-width: 1080px) {
   .search h1 {

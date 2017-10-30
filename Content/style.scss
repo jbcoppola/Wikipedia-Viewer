@@ -146,7 +146,7 @@ h1 {
         margin: 10px;
         border-radius: $borderRadLarge;
         box-shadow: 0 4px 0 $medMain;
-        animation: fadein 100ms ease-in-out 1;
+        animation: fadeIn 200ms ease-in-out;
         transition: 100ms;
 
         &:nth-of-type(1n) {
@@ -206,6 +206,8 @@ h1 {
             max-width: 95%;
             border-radius: $borderRadSmall;
             margin: 10px;
+            transform: scale(0);
+            animation: growIn 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
         }
     }
 }
@@ -226,7 +228,7 @@ h1 {
     max-height: 240vw;
 }
 
-@keyframes fadein {
+@keyframes fadeIn {
     from {
         opacity: 0;
     }
@@ -234,6 +236,14 @@ h1 {
     to {
         opacity: 1;
     }
+}
+@keyframes growIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 1080px) {
