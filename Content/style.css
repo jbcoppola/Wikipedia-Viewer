@@ -150,7 +150,6 @@ h1 {
     color: black;
     outline: none;
     background-color: #ff666b;
-    max-height: 16.66667%;
     padding: 15px;
     margin: 10px;
     border-radius: 50px;
@@ -216,8 +215,8 @@ h1 {
       margin: 10px;
       -webkit-transform: scale(0);
               transform: scale(0);
-      -webkit-animation: growIn 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
-              animation: growIn 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards; }
+      -webkit-animation: growIn 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
+              animation: growIn 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards; }
 
 .footer {
   margin-top: 20px;

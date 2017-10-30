@@ -141,7 +141,6 @@ h1 {
         color: black;
         outline: none;
         background-color: $lightMain;
-        max-height: (100%/6);
         padding: 15px;
         margin: 10px;
         border-radius: $borderRadLarge;
@@ -207,7 +206,7 @@ h1 {
             border-radius: $borderRadSmall;
             margin: 10px;
             transform: scale(0);
-            animation: growIn 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
+            animation: growIn 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
         }
     }
 }
