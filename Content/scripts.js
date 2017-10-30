@@ -113,13 +113,14 @@ function resultsHeight() {
     }
     var divider;
     if (window.innerWidth > 1080) {
-        divider = 2.5;
+        divider = 2.3;
     }
     else if (window.innerWidth > 720) {
-        divider = 1.5;
+        divider = 1.3;
     }
-    else { divider = .5; }
+    else { divider = .3; }
     height /= divider;
+    if (height < 700) { height = 700; }
 
     height = height.toString() + "px";
     document.querySelector(".results-list").style.maxHeight = height;
