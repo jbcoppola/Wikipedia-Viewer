@@ -35,7 +35,7 @@ function searchFunc(url) {
 
             resultsHeight();
             document.querySelector(".footer").classList.remove("hidden");
-        }, 800);
+        }, 1000);
     }
 }
 
