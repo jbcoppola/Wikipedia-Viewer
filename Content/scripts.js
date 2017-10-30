@@ -106,7 +106,6 @@ function scrollTo(btn, scrollToId) {
 
 function resultsHeight() {
     var results = document.querySelectorAll(".result");
-    console.log(results);
     var height = 0;
     for (i = 0; i < results.length; i++) {
         height += results[i].clientHeight;
